@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.util.Hashtable;
 import java.util.Vector;
 
+import document.building.Building;
 import document.map.PowerStation;
 
 public class Team {

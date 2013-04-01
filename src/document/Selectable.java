@@ -12,4 +12,6 @@ public interface Selectable {
 
 	public boolean isLocation(Point point);
 	
+	public String getType();
+	
 }

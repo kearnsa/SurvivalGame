@@ -1,33 +1,41 @@
 package document.map;
 
 import java.awt.Point;
+import java.awt.Rectangle;
 
 import document.Player;
 import document.Selectable;
 import document.Team;
+import document.building.Building;
 
-public class PowerStation implements Selectable{
-	private Team owner;
-	private String ID;
-	private Point location;
+public class PowerStation extends Building implements Selectable{
 	private final int powerRate = 5;
+	private final int height = 2;
+	private final int width = 2;
 	
 	/**
 	 * Default Constructor
 	 */
 	public PowerStation()
 	{
-		
+		throw new RuntimeException("The default PowerStation() constructor should not be called.");
 	}
 	
 	/**
 	 * Non-Default Constructor
 	 */
-	public PowerStation(Point location)
+	public PowerStation(Point origin, Map map)
 	{
-		this.location = location;
-		owner = null;
-		//ID = 
+		this.team = null;
+		type = "Power Station";
+
+		area = new Rectangle();
+		area.x = origin.x;
+		area.y = origin.y;
+		area.height = height;
+		area.width = width;
+		
+		map.updateMapArea(area, this);
 	}
 	
 	/**
@@ -36,7 +44,7 @@ public class PowerStation implements Selectable{
 	 * @param Team owner
 	 */
 	public void setOwner(Team owner)
-		{this.owner = owner;}
+		{this.team = owner;}
 	
 	/**
 	 * Getter Method
@@ -44,7 +52,7 @@ public class PowerStation implements Selectable{
 	 * @return Team
 	 */
 	public Team getOwner()
-		{return owner;}
+		{return this.team;}
 
 	/**
 	 * Getter Method
@@ -54,19 +62,18 @@ public class PowerStation implements Selectable{
 	public int getRate()
 		{return powerRate;}
 		
-	public void updateTeamPower()
-		{owner.setResources(owner.getResources() + powerRate);}
+	/**
+	 * Updates the controlling Team's power
+	 */
+	public void updateResource()
+		{this.team.setResources(this.team.getResources() + powerRate);}
+
 
 	/**
-	 * Checks to see if the location of this PowerStation is
-	 * equal to the given Point location
+	 * Getter Method
 	 * 
-	 * @param Point point
+	 * @return String
 	 */
-	public boolean isLocation(Point point) {
-		if(location.equals(point))
-			{return true;}
-		else 
-			{return false;}
-	}
+	public String getType() 
+		{return type;}
 }
