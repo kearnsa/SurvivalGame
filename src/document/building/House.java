@@ -6,8 +6,9 @@ import java.awt.Rectangle;
 import document.Selectable;
 import document.Team;
 import document.map.Map;
+import document.unit.Civilian;
 
-public class House extends Building implements Selectable {
+public class House extends Building{
 	private final int height = 2;
 	private final int width = 2;
 	
@@ -18,6 +19,7 @@ public class House extends Building implements Selectable {
 	public House(Team team, Point origin, Map map)
 	{
 		this.team = team;
+		this.map = map;
 		resourceCost = 100;
 		powerCost = 5;
 		hp = 200;
@@ -34,9 +36,16 @@ public class House extends Building implements Selectable {
 		this.spawnLocation.x = origin.x + width;
 		this.spawnLocation.y = origin.y + height;
 		
-		map.updateMapArea(area, this);
+		this.map.updateMapArea(area, this);
 	}
 	
+	/**
+	 * Creates a Civilian
+	 * 
+	 * @return Civilian
+	 */
+	public Civilian makeCivilian()
+		{return new Civilian(team, spawnLocation, map);}
 	
 
 }

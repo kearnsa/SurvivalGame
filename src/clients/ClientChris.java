@@ -6,8 +6,8 @@ import document.*;
 import document.building.Baracks;
 import document.building.Farm;
 import document.building.House;
+import document.building.PowerStation;
 import document.map.Map;
-import document.map.PowerStation;
 
 public class ClientChris {
 
@@ -16,8 +16,8 @@ public class ClientChris {
 		Team team = new Team("Chris's Team");
 		Map map = new Map();
 		Point p = new Point();
-		p.x = 8;
-		p.y = 8;
+		p.x = 7;
+		p.y = 0;
 		House h = new House(team, p, map);
 		
 		p.x = 2;
@@ -34,5 +34,10 @@ public class ClientChris {
 		
 		
 		System.out.println(map.displayTest());
+		
+		h.makeCivilian();
+		
+		System.out.println(map.displayTest());
+		
 	}
 }

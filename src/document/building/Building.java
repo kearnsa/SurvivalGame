@@ -3,11 +3,14 @@ package document.building;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import document.Selectable;
 import document.Team;
-import document.Unit;
+import document.map.Map;
+import document.unit.Unit;
 
-public class Building {
+public class Building implements Selectable{
 	protected Team team;
+	protected Map map;
 	protected int resourceCost;
 	protected int powerCost;
 	protected int hp;
@@ -16,14 +19,14 @@ public class Building {
 	protected String type;
 	
 	/**
-	 * Creates a Unit at the spawn point of this building. If the spawn point
+	 * Places a Unit at the spawn point of this building. If the spawn point
 	 * is occupied, the Unit will spawn at the nearest open location.
 	 * 
 	 * @param Unit unit
 	 */
-	public void createUnit(Unit unit)
+	public void placeUnit(Unit unit)
 	{
-		
+		map.updateMapArea(spawnLocation, unit);
 	}
 	
 	/**

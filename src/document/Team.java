@@ -5,7 +5,8 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 import document.building.Building;
-import document.map.PowerStation;
+import document.building.PowerStation;
+import document.unit.Unit;
 
 public class Team {
 	private Vector<Player> players;

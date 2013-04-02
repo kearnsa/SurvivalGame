@@ -1,4 +1,4 @@
-package document.map;
+package document.building;
 
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -6,9 +6,9 @@ import java.awt.Rectangle;
 import document.Player;
 import document.Selectable;
 import document.Team;
-import document.building.Building;
+import document.map.Map;
 
-public class PowerStation extends Building implements Selectable{
+public class PowerStation extends Building{
 	private final int powerRate = 5;
 	private final int height = 2;
 	private final int width = 2;
@@ -27,7 +27,7 @@ public class PowerStation extends Building implements Selectable{
 	public PowerStation(Point origin, Map map)
 	{
 		this.team = null;
-		type = "Power Station";
+		type = "Pwr Stn";
 
 		area = new Rectangle();
 		area.x = origin.x;
