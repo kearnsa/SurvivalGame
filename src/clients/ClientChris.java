@@ -11,6 +11,10 @@ import document.map.Map;
 
 public class ClientChris {
 
+	//TODO: Make spawn locations be changable so that if a location is occupied or invalid, a unit may still spawn.
+	//TODO: Add more buildings and units.
+	
+	
 	public static void main(String[] args)
 	{
 		Team team = new Team("Chris's Team");
