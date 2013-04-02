@@ -7,11 +7,10 @@ import document.building.Baracks;
 import document.building.Farm;
 import document.building.House;
 import document.building.PowerStation;
-import document.map.Map;
 
 public class ClientChris {
 
-	//TODO: Make spawn locations be changable so that if a location is occupied or invalid, a unit may still spawn.
+	//TODO: modify code so that units will automatically spawn where there is room for them.
 	//TODO: Add more buildings and units.
 	
 	
@@ -26,22 +25,32 @@ public class ClientChris {
 		
 		p.x = 2;
 		p.y = 2;
-		Farm h2 = new Farm(team, p, map);
+		Farm f = new Farm(team, p, map);
 		
 		p.x = 5;
 		p.y = 5;
-		Baracks h3 = new Baracks(team, p, map);
+		Baracks b = new Baracks(team, p, map);
 		
 		p.x = 0;
 		p.y = 5;
-		PowerStation h4 = new PowerStation(p, map);
+		PowerStation ps = new PowerStation(p, map);
+		
+		p.x = 2;
+		p.y = 5;
+		PowerStation ps2 = new PowerStation(p, map);
+		
+		p.x = 0;
+		p.y = 7;
+		Baracks b2 = new Baracks(team, p, map);
 		
 		
 		System.out.println(map.displayTest());
 		
 		h.makeCivilian();
 		
+		
 		System.out.println(map.displayTest());
+		System.out.println(map.findAvailableSpawnPoint(ps.getArea()));
 		
 	}
 }

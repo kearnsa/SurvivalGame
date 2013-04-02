@@ -3,7 +3,6 @@ package document;
 import java.awt.Point;
 import java.util.Vector;
 
-import document.map.Map;
 
 public class World {
 	Vector<Team> teams;

@@ -1,8 +1,8 @@
 package document.unit;
 import java.awt.Point;
 
+import document.Map;
 import document.Team;
-import document.map.Map;
 
 
 public class Soldier extends Unit{
@@ -14,13 +14,13 @@ public class Soldier extends Unit{
 	public Soldier(Team team, Point origin, Map map)
 	{
 		this.team = team;
-		resourceCost = 20;
+		resourceCost = 350;
 		powerCost = 20;
-		foodCost = 200;
+		foodCost = 250;
 		
-		hp = 150;
+		hp = 300;
 		strength = 10;
-		speed = 3;
+		speed = 6;
 		
 		type = "Soldier";
 		

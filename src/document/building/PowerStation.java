@@ -3,10 +3,10 @@ package document.building;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import document.Map;
 import document.Player;
 import document.Selectable;
 import document.Team;
-import document.map.Map;
 
 public class PowerStation extends Building{
 	private final int powerRate = 5;

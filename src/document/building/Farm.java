@@ -3,9 +3,9 @@ package document.building;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import document.Map;
 import document.Selectable;
 import document.Team;
-import document.map.Map;
 
 public class Farm extends Building{
 	private final int height = 3;
@@ -22,7 +22,7 @@ public class Farm extends Building{
 		this.map = map;
 		resourceCost = 100;
 		powerCost = 5;
-		hp = 200;
+		hp = 600;
 		type = "Farm";
 		
 		

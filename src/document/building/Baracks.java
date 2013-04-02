@@ -3,9 +3,9 @@ package document.building;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import document.Map;
 import document.Selectable;
 import document.Team;
-import document.map.Map;
 
 public class Baracks extends Building {
 	private final int height = 3;
@@ -21,7 +21,7 @@ public class Baracks extends Building {
 		this.map = map;
 		resourceCost = 300;
 		powerCost = 25;
-		hp = 500;
+		hp = 1000;
 		type = "Baracks";
 		
 		

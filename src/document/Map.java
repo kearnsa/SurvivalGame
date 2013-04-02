@@ -1,10 +1,9 @@
-package document.map;
+package document;
 
 import java.awt.Point;
 import java.awt.Rectangle;
 import java.util.Vector;
 
-import document.Selectable;
 import document.building.PowerStation;
 
 public class Map {
@@ -85,6 +84,16 @@ public class Map {
 		{throw new RuntimeException("The map coordinate point: (" + p.x + "," + p.y + ") is either not valid or occupied.");}
 	}
 	
+	/**
+	 * Determines if a single Point on the map is valid and unoccupied
+	 * 
+	 * @param Point p
+	 * @return boolean
+	 */
+	public boolean isValidAndUnoccupied(Point p)
+	{
+		return isValid(p) && isUnoccupied(p);
+	}
 	
 	
 	
@@ -209,4 +218,63 @@ public class Map {
 		
 		return sb.toString();
 	}
+	
+	private Point coordsToPoint(int x, int y)
+	{
+		Point p = new Point();
+		p.x = x;
+		p.y = y;
+		
+		return p;
+	}
+	
+	
+	public Point findAvailableSpawnPoint(Rectangle r)
+	{
+		int leftX = r.x;
+		int rightX = r.x + r.width - 1;
+		int topY = r.y;
+		int bottomY = r.y + r.height - 1;
+		
+		int tempx;
+		int tempy;
+		
+		//Checks bottom row
+		for (tempx = leftX - 1; tempx < rightX + 1; tempx++)
+		{
+			Point p = coordsToPoint(tempx, bottomY + 1);
+			
+			if(isValidAndUnoccupied(p))
+				{return p;}
+		}
+		
+		//Checks columns
+		for (tempy = topY - 1; tempy < bottomY + 1; tempy++)
+		{
+			Point p = coordsToPoint(leftX - 1, tempy);
+			
+			if(isValidAndUnoccupied(p))
+				{return p;}
+			
+			p = coordsToPoint(rightX + 1, tempy);
+			
+			if(isValidAndUnoccupied(p))
+				{return p;}
+		}
+		
+		//Checks top row
+		for (tempx = leftX - 1; tempx < rightX + 1; tempx++)
+		{
+			Point p = coordsToPoint(tempx, topY + 1);
+			
+			if(isValidAndUnoccupied(p))
+				{return p;}
+		}
+		
+		//There are no available spawn points.
+		return null;
+	}
+	
+	
+	
 }

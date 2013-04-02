@@ -3,9 +3,9 @@ package document.unit;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import document.Map;
 import document.Selectable;
 import document.Team;
-import document.map.Map;
 
 public class Civilian extends Unit {
 
@@ -18,11 +18,11 @@ public class Civilian extends Unit {
 		this.team = team;
 		resourceCost = 0;
 		powerCost = 0;
-		foodCost = 25;
+		foodCost = 50;
 		
 		hp = 15;
-		strength = 0;
-		speed = 1;
+		strength = 1;
+		speed = 2;
 		
 		type = "Civilian";
 		

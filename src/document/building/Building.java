@@ -3,9 +3,9 @@ package document.building;
 import java.awt.Point;
 import java.awt.Rectangle;
 
+import document.Map;
 import document.Selectable;
 import document.Team;
-import document.map.Map;
 import document.unit.Unit;
 
 public class Building implements Selectable{
@@ -69,6 +69,9 @@ public class Building implements Selectable{
 	 */
 	public void destroy()
 		{this.team.removeBuilding(this);}
+	
+	public Rectangle getArea()
+		{return area;}
 	
 	
 }
