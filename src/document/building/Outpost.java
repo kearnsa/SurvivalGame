@@ -82,6 +82,8 @@ public class Outpost extends Building {
 				{return new Hunter(team, map.findAvailableSpawnPoint(area), map);}
 			else
 				{throw new RuntimeException("There is no available location to spawn a Unit.");}
+			
+			//TODO: Unit production should be made to hang until an available space opens up.
 		}
 	}
 }

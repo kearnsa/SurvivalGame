@@ -11,8 +11,6 @@ import document.building.PowerStation;
 
 public class ClientChris {
 
-	//TODO: modify code so that units will automatically spawn where there is room for them.
-	//TODO: Add more buildings and units.
 	
 	
 	public static void main(String[] args)
