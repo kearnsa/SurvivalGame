@@ -11,7 +11,7 @@ import document.building.PowerStation;
 
 public class ClientChris {
 
-	
+	public ClientChris(){}
 	
 	public static void main(String[] args)
 	{
