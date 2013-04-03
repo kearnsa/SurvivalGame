@@ -45,7 +45,20 @@ public class House extends Building{
 	 * @return Civilian
 	 */
 	public Civilian makeCivilian()
-		{return new Civilian(team, spawnLocation, map);}
+	{
+		//Spawn Location is empty and valid
+		if (map.isValidAndUnoccupied(spawnLocation))
+			{return new Civilian(team, spawnLocation, map);}
+		
+		//Spawn Location is occupied or invalid
+		else
+		{
+			if(map.findAvailableSpawnPoint(area) != null)
+				{return new Civilian(team, map.findAvailableSpawnPoint(area), map);}
+			else
+				{throw new RuntimeException("There is no available location to spawn a Unit.");}
+		}
+	}
 	
 
 }

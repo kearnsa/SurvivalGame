@@ -58,7 +58,7 @@ public class Map {
 	 */
 	public void updateMapArea(Rectangle r, Selectable s)
 	{
-		if(isUnoccupied(r))
+		if(isValid(r) && isUnoccupied(r))
 		{
 			for (int xCoord = r.x; xCoord < r.x + r.width; xCoord++)
 			{
@@ -68,6 +68,10 @@ public class Map {
 				}
 			}
 		}
+		
+		else
+		{throw new RuntimeException("The area location is either occupied or not valid.");}
+		
 	}
 	
 	/**
@@ -247,6 +251,15 @@ public class Map {
 			if(isValidAndUnoccupied(p))
 				{return p;}
 		}
+				
+		//Checks top row
+		for (tempx = leftX - 1; tempx < rightX + 1; tempx++)
+		{
+			Point p = coordsToPoint(tempx, topY - 1);
+			
+			if(isValidAndUnoccupied(p))
+				{return p;}
+		}
 		
 		//Checks columns
 		for (tempy = topY - 1; tempy < bottomY + 1; tempy++)
@@ -262,14 +275,7 @@ public class Map {
 				{return p;}
 		}
 		
-		//Checks top row
-		for (tempx = leftX - 1; tempx < rightX + 1; tempx++)
-		{
-			Point p = coordsToPoint(tempx, topY + 1);
-			
-			if(isValidAndUnoccupied(p))
-				{return p;}
-		}
+
 		
 		//There are no available spawn points.
 		return null;

@@ -6,6 +6,8 @@ import java.awt.Rectangle;
 import document.Map;
 import document.Selectable;
 import document.Team;
+import document.unit.Civilian;
+import document.unit.Farmer;
 
 public class Farm extends Building{
 	private final int height = 3;
@@ -52,5 +54,26 @@ public class Farm extends Building{
 	 */
 	public void updateResource()
 		{this.team.setResources(this.team.getResources() + foodRate);}
+	
+	/**
+	 * Creates a Farmer
+	 * 
+	 * @return Civilian
+	 */
+	public Farmer makeFarmer()
+	{
+		//Spawn Location is empty and valid
+		if (map.isValidAndUnoccupied(spawnLocation))
+			{return new Farmer(team, spawnLocation, map);}
+		
+		//Spawn Location is occupied or invalid
+		else
+		{
+			if(map.findAvailableSpawnPoint(area) != null)
+				{return new Farmer(team, map.findAvailableSpawnPoint(area), map);}
+			else
+				{throw new RuntimeException("There is no available location to spawn a Unit.");}
+		}
+	}
 	
 }
