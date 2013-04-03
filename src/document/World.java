@@ -5,8 +5,8 @@ import java.util.Vector;
 
 
 public class World {
-	Vector<Team> teams;
-	Map map;
+	private Vector<Team> teams;
+	private Map map;
 	
 	/**
 	 * Default Constructor
@@ -14,6 +14,7 @@ public class World {
 	public World()
 	{
 		teams = new Vector<Team>();
+		this.map = new Map();
 	}
 
 	public World(Map map)
@@ -30,6 +31,9 @@ public class World {
 	
 	public Team getTeam(int index)
 		{return teams.get(index);}
+	
+	public Vector<Team> getTeams()
+		{return teams;}
 	
 	public void setMap(Map map)
 		{this.map = map;}

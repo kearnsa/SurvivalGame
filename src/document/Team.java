@@ -1,5 +1,6 @@
 package document;
 
+import java.awt.Color;
 import java.awt.Point;
 import java.util.Hashtable;
 import java.util.Vector;
@@ -11,6 +12,7 @@ import document.unit.Unit;
 public class Team {
 	private Vector<Player> players;
 	private String teamName;
+	private Color color;
 	private int teamResources;
 	private int teamFood;
 	private int teamPower;
@@ -23,6 +25,7 @@ public class Team {
 	public Team() 
 	{
 		players = new Vector<Player>();
+		color = Color.red;
 		teamName = "Team Name";
 		teamResources = 200;
 		teamFood = 200;
@@ -36,9 +39,10 @@ public class Team {
 	 * 
 	 * @param String teamName
 	 */
-	public Team(String teamName)
+	public Team(String teamName, Color color)
 	{
 		this.teamName = teamName;
+		this.color = color;
 		players = new Vector<Player>();
 		teamResources = 200;
 		teamFood = 200;
@@ -62,7 +66,65 @@ public class Team {
 	 */
 	public void removePlayer(Player player)
 		{players.remove(player);}
+	
+	/**
+	 * Adds a new Building to this Team at the given Point location
+	 * 
+	 * @param Building building
+	 * @param Point origin: location of the Building
+	 */
+	public void addBuilding(Building building, Point origin)
+	{
+		
+	}
+	
+	/**
+	 * Removes a Building from this Team
+	 * 
+	 * @param Building building
+	 */
+	public void removeBuilding(Building building)
+	{
+		
+	}
+	
+	/**
+	 * Adds a new Unit to this Team's roster
+	 * 
+	 * @param Unit unit
+	 */
+	public void addUnit(Unit unit)
+	{
+		
+	}
+	
+	/**
+	 * Remove a Unit from this Team's roster
+	 * 
+	 * @param Unit unit
+	 */
+	public void removeUnit(Unit unit)
+	{
 
+	}
+	
+	/**
+	 * Gives control of a PowerStation to this Team
+	 * 
+	 * @param PowerStation station
+	 */
+	public void takePowerStation(PowerStation station)
+		{station.setOwner(this);}
+	
+	/**
+	 * Removes control of a PowerStation from this Team
+	 * @param PowerStation station
+	 */
+	public void losePowerStation(PowerStation station)
+		{station.setOwner(null);}
+	
+	//		--------------------------Getter Methods----------------------------------
+	
 	/**
 	 * Getter Method
 	 * 
@@ -89,81 +151,12 @@ public class Team {
 		{return players.get(index);}
 	
 	/**
-	 * Adds a new Building to this Team at the given Point location
-	 * 
-	 * @param Building building
-	 * @param Point origin: location of the Building
-	 */
-	public void addBuilding(Building building, Point origin)
-	{
-		
-	}
-	
-	/**
-	 * Removes a Building from this Team
-	 * 
-	 * @param Building building
-	 */
-	public void removeBuilding(Building building)
-	{
-		
-	}
-	
-	/**
-	 * Adds a new Unit to this Team at a given Point location
-	 * 
-	 * @param Unit unit
-	 * @param Point origin: location of the new Unit
-	 */
-	public void addUnit(Unit unit, Point origin)
-	{
-		
-	}
-	
-	/**
-	 * Remove a Unit from this Team
-	 * 
-	 * @param Unit unit
-	 */
-	public void removeUnit(Unit unit)
-	{
-		
-	}
-	
-	/**
-	 * Gives control of a PowerStation to this Team
-	 * 
-	 * @param PowerStation station
-	 */
-	public void takePowerStation(PowerStation station)
-	{
-		
-	}
-	
-	/**
-	 * Removes control of a PowerStation from this Team
-	 * @param PowerStation station
-	 */
-	public void losePowerStation(PowerStation station)
-	{
-		
-	}
-	
-	/**
 	 * Getter Method
 	 * 
 	 * @return int
 	 */
 	public int getResources()
 		{return teamResources;}
-	
-	/**
-	 * Setter Method
-	 * 
-	 * @param int amount
-	 */
-	public void setResources(int amount)
-		{this.teamResources = amount;}
 	
 	/**
 	 * Getter Method
@@ -174,6 +167,42 @@ public class Team {
 		{return teamFood;}
 	
 	/**
+	 * Getter Method
+	 * 
+	 * @return int
+	 */
+	public int getPower()
+		{return teamPower;}
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return Color
+	 */
+	public Color getColor()
+		{return color;}
+
+	//		--------------------------Setter Methods----------------------------------
+
+	/**
+	 * Setter Method
+	 * 
+	 * @param Color color
+	 */
+	public void setColor(Color color)
+		{this.color = color;}
+	
+	/**
+	 * Setter Method
+	 * 
+	 * @param int amount
+	 */
+	public void setResources(int amount)
+		{this.teamResources = amount;}
+	
+
+	
+	/**
 	 * Setter Method
 	 * 
 	 * @param int amount
@@ -181,13 +210,7 @@ public class Team {
 	public void setFood(int amount)
 		{this.teamFood = amount;}
 	
-	/**
-	 * Getter Method
-	 * 
-	 * @return int
-	 */
-	public int getPower()
-		{return teamPower;}
+
 	
 	/**
 	 * Setter Method

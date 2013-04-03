@@ -2,6 +2,10 @@ package clients;
 
 import java.awt.Point;
 
+import javax.swing.JFrame;
+
+import view.rtsGraph;
+
 import document.*;
 import document.building.Baracks;
 import document.building.Farm;
@@ -13,43 +17,30 @@ public class ClientChris {
 
 	public ClientChris(){}
 	
+	
 	public static void main(String[] args)
 	{
-		Team team = new Team("Chris's Team");
-		Map map = new Map();
-		Point p = new Point();
-		p.x = 7;
-		p.y = 0;
-		House h = new House(team, p, map);
+		World world = new World();
 		
-		p.x = 2;
-		p.y = 2;
-		Farm f = new Farm(team, p, map);
+		rtsGraph graph = new rtsGraph(world);
 		
-		p.x = 6;
-		p.y = 4;
-		Outpost op = new Outpost(team, p, map);
-		
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-		op.makeHunter();
-	
-	
-
-	
-		
-		
-		
-		System.out.println(map.displayTest());
+        JFrame f = new JFrame("2D RTS View");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.getContentPane().add(graph);
+        f.setSize(500,500);
+        f.setVisible(true);
+        
+        Point p = new Point();
+        p.x = 3;
+        p.y = 3;
+        
+        PowerStation ps = new PowerStation(p, world.getMap());
+        
+        System.out.println(world.getMap().displayTest());
+        
+        
+        
+        graph.repaint();
 		
 		
 	}

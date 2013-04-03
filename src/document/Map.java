@@ -100,6 +100,31 @@ public class Map {
 	}
 	
 	
+	// 	    ------------------------------- Getter Methods -------------------------------------
+
+	/**
+	 * Getter Method
+	 * @return int length
+	 */
+	public int getWidth()
+		{return map.length;}
+	
+
+	/**
+	 * Getter Method
+	 * @return int Height
+	 */
+	public int getHeight()
+		{return map[0].length;}
+	
+	/**
+	 * Getter Method
+	 * @return Vector<PowerStation>
+	 */
+	public Vector<PowerStation> getPowerStations()
+		{return powerStations;}
+	
+	
 	
 	//      ------------------------------- Testing Methods -------------------------------------
 	
