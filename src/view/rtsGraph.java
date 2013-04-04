@@ -39,6 +39,9 @@ public class rtsGraph extends JPanel{
 	    hScale = map.getHeight() / hPixWindow;
 	    wScale = map.getWidth() / wPixWindow;
 	    
+	    
+	    g2.fillRect(3,3, 7, 7);
+	    
 	    //For all Power Stations
 	    for (int i = 0; i < map.getPowerStations().size(); i++)
 	    {
