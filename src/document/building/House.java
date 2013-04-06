@@ -36,6 +36,7 @@ public class House extends Building{
 		this.spawnLocation.x = origin.x + width;
 		this.spawnLocation.y = origin.y + height;
 		
+		team.addBuilding(this);
 		this.map.updateMapArea(area, this);
 	}
 	

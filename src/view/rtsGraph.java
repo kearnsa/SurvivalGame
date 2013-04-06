@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 import document.Map;
 import document.Team;
 import document.World;
+import document.building.Building;
 import document.building.PowerStation;
 
 public class rtsGraph extends JPanel{
@@ -36,27 +37,46 @@ public class rtsGraph extends JPanel{
 	    hPixWindow = getHeight();
 	    wPixWindow = getWidth();
 	    
-	    hScale = map.getHeight() / hPixWindow;
-	    wScale = map.getWidth() / wPixWindow;
+	    hScale = hPixWindow / map.getHeight();
+	    wScale = wPixWindow / map.getWidth();
 	    
-	    
-	    g2.fillRect(3,3, 7, 7);
 	    
 	    //For all Power Stations
 	    for (int i = 0; i < map.getPowerStations().size(); i++)
 	    {
 	    	PowerStation ps = map.getPowerStation(i);
 
-	    	int xCoord = ps.getArea().x;
-	    	int yCoord = ps.getArea().y;
+	    	int xCoord = (int)(ps.getArea().x * wScale);
+	    	int yCoord = (int)(ps.getArea().y * hScale);
+	    	int bWidth = (int)(ps.getArea().width * wScale);
+	    	int bHeight = (int)(ps.getArea().height * hScale);
 	    	
-	    	g2.fillRect(xCoord,yCoord, ps.getArea().height, ps.getArea().width);
+	    	
+	    	g2.fillRect(xCoord, yCoord, bWidth, bHeight);
 	    }
 	    
 	    //For all Teams
 	    for (int i = 0; i < teams.size(); i++)
 	    {
+	    	Team t = teams.get(i);
+	    	for(int j = 0; j < t.getBuildings().size(); j++)
+	    	{
+	    		Building b = t.getBuilding(j);
+	    		
+	    		
+	    		int xCoord = (int)(b.getArea().x * wScale);
+	    		int yCoord = (int)(b.getArea().y * hScale);
+	    		int bWidth = (int)(b.getArea().width * wScale);
+	    		int bHeight = (int)(b.getArea().height * hScale);
 	    	
+	    	
+	    		g2.fillRect(xCoord, yCoord, bWidth, bHeight);
+	    	}
+	    
+
+	    
+	    	
+	    	//For all units
 	    }
 	}
 }

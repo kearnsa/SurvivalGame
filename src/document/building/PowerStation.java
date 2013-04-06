@@ -35,6 +35,7 @@ public class PowerStation extends Building{
 		area.height = height;
 		area.width = width;
 		
+		map.getPowerStations().add(this);
 		map.updateMapArea(area, this);
 	}
 	

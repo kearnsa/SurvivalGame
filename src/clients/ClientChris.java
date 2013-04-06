@@ -1,5 +1,6 @@
 package clients;
 
+import java.awt.Color;
 import java.awt.Point;
 
 import javax.swing.JFrame;
@@ -21,6 +22,8 @@ public class ClientChris {
 	public static void main(String[] args)
 	{
 		World world = new World();
+		Team team = new Team("Chris", Color.red);
+		
 		
 		rtsGraph graph = new rtsGraph(world);
 		
@@ -31,17 +34,27 @@ public class ClientChris {
         f.setVisible(true);
         
         Point p = new Point();
-        p.x = 3;
-        p.y = 3;
+        p.x = 0;
+        p.y = 0;
         
-        PowerStation ps = new PowerStation(p, world.getMap());
+        PowerStation ps1 = new PowerStation(p, world.getMap());
+        
+        p.x = 2;
+        p.y = 2;
+        PowerStation ps2 = new PowerStation(p, world.getMap());
+        
+        p.x = 0;
+        p.y = 4;
+        Baracks baracks = new Baracks(team, p, world.getMap());
+        
+        
+        
         
         System.out.println(world.getMap().displayTest());
         
         
         
         graph.repaint();
-		
 		
 	}
 }

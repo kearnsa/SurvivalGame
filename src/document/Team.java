@@ -16,8 +16,8 @@ public class Team {
 	private int teamResources;
 	private int teamFood;
 	private int teamPower;
-	private Hashtable<String, Unit> units;
-	private Hashtable<String, Building> buildings;
+	private Vector<Unit> units;
+	private Vector<Building> buildings;
 	
 	/**
 	 * Default Constructor
@@ -30,8 +30,8 @@ public class Team {
 		teamResources = 200;
 		teamFood = 200;
 		teamPower = 200;
-		units = new Hashtable<String, Unit>();
-		buildings = new Hashtable<String, Building>();
+		units = new Vector<Unit>();
+		buildings = new Vector<Building>();
 	}
 	
 	/**
@@ -47,8 +47,8 @@ public class Team {
 		teamResources = 200;
 		teamFood = 200;
 		teamPower = 200;
-		units = new Hashtable<String, Unit>();
-		buildings = new Hashtable<String, Building>();
+		units = new Vector<Unit>();
+		buildings = new Vector<Building>();
 	}
 	
 	/**
@@ -71,11 +71,10 @@ public class Team {
 	 * Adds a new Building to this Team at the given Point location
 	 * 
 	 * @param Building building
-	 * @param Point origin: location of the Building
 	 */
-	public void addBuilding(Building building, Point origin)
+	public void addBuilding(Building building)
 	{
-		
+		buildings.add(building);
 	}
 	
 	/**
@@ -85,7 +84,7 @@ public class Team {
 	 */
 	public void removeBuilding(Building building)
 	{
-		
+		buildings.remove(building);
 	}
 	
 	/**
@@ -95,7 +94,7 @@ public class Team {
 	 */
 	public void addUnit(Unit unit)
 	{
-		
+		units.add(unit);
 	}
 	
 	/**
@@ -105,7 +104,7 @@ public class Team {
 	 */
 	public void removeUnit(Unit unit)
 	{
-
+		units.remove(unit);
 	}
 	
 	/**
@@ -181,6 +180,22 @@ public class Team {
 	 */
 	public Color getColor()
 		{return color;}
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return Vector<Building>
+	 */
+	public Vector<Building> getBuildings()
+		{return buildings;}
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return Vector<Building>
+	 */
+	public Building getBuilding(int i)
+		{return buildings.get(i);}
 
 	//		--------------------------Setter Methods----------------------------------
 
