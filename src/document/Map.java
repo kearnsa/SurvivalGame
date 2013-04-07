@@ -15,8 +15,7 @@ public class Map {
 	 * Default Constructor - for testing only
 	 */
 	public Map() {
-		map = new Selectable[10][10];
-		powerStations = new Vector<PowerStation>();
+		throw new RuntimeException("The default Map() constructor should not be called.");
 	}
 	
 	/**

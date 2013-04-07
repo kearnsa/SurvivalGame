@@ -22,12 +22,12 @@ public class Farmer extends Unit {
 		strength = 4;
 		speed = 4;
 		
-		type = "Farmer";
+		type = "Fa";
 		
 		location = origin;
 		
 		
-		
+		team.addUnit(this);
 		map.updateMapArea(location, this);
 	}
 }

@@ -196,6 +196,22 @@ public class Team {
 	 */
 	public Building getBuilding(int i)
 		{return buildings.get(i);}
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return Vector<Building>
+	 */
+	public Vector<Unit> getUnits()
+		{return units;}
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return Vector<Building>
+	 */
+	public Unit getUnit(int i)
+		{return units.get(i);}
 
 	//		--------------------------Setter Methods----------------------------------
 

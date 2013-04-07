@@ -22,12 +22,12 @@ public class Soldier extends Unit{
 		strength = 10;
 		speed = 6;
 		
-		type = "Soldier";
+		type = "Sol";
 		
 		location = origin;
 		
 		
-		
+		team.addUnit(this);
 		map.updateMapArea(location, this);
 	}
 

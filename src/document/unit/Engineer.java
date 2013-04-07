@@ -22,12 +22,12 @@ public class Engineer extends Unit {
 		strength = 4;
 		speed = 1;
 		
-		type = "Engineer";
+		type = "Eng";
 		
 		location = origin;
 		
 		
-		
+		team.addUnit(this);
 		map.updateMapArea(location, this);
 	}
 

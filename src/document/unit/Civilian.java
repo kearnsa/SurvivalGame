@@ -24,12 +24,12 @@ public class Civilian extends Unit {
 		strength = 1;
 		speed = 2;
 		
-		type = "Civilian";
+		type = "Civ";
 		
 		location = origin;
 		
 		
-		
+		team.addUnit(this);
 		map.updateMapArea(location, this);
 	}
 

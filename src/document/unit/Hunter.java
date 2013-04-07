@@ -22,12 +22,12 @@ public class Hunter extends Unit {
 		strength = 8;
 		speed = 8;
 		
-		type = "Hunter";
+		type = "Hnt";
 		
 		location = origin;
 		
 		
-		
+		team.addUnit(this);
 		map.updateMapArea(location, this);
 	}
 

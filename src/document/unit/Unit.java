@@ -26,13 +26,7 @@ public class Unit implements Selectable{
 	public void setHP(int hp)
 		{this.hp = hp;}
 	
-	/**
-	 * Getter Method
-	 * 
-	 * @return int
-	 */
-	public int getHP()
-		{return hp;}
+
 	
 	/**
 	 * Removes the Unit from the game
@@ -50,6 +44,25 @@ public class Unit implements Selectable{
 	 */
 	public boolean isLocation(Point p)
 		{return location.equals(p);}
+	
+	
+	// -------------------------------- Getter Methods -------------------------------------------
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return Point
+	 */
+	public Point getLocation()
+		{return location;}
+	
+	/**
+	 * Getter Method
+	 * 
+	 * @return int
+	 */
+	public int getHP()
+		{return hp;}
 	
 	/**
 	 * Getter Method

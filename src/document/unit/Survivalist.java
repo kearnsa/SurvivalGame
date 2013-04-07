@@ -22,12 +22,12 @@ public class Survivalist extends Unit {
 		strength = 8;
 		speed = 7;
 		
-		type = "Survivalist";
+		type = "Srv";
 		
 		location = origin;
 		
 		
-		
+		team.addUnit(this);
 		map.updateMapArea(location, this);
 	}
 
