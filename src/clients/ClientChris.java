@@ -21,7 +21,18 @@ public class ClientChris {
 
 	public ClientChris(){}
 	
-
+/*
+ * Unit Production:
+ * 
+ * Make Map a Singleton
+ * Unit Menu: on button click, if selected is correct building, produce unit and close window.
+ */
+	
+/*
+ * Game Lobby:
+ * 
+ * 	
+ */
 	
 	public static void main(String[] args)
 	{		

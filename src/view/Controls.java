@@ -36,7 +36,7 @@ public class Controls {
 		JButton buildingMenuButton = new JButton("Building Production");
 		buildingMenuButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Building Production"); //TODO: remove
+				BuildingMenu buildingMenu = new BuildingMenu();
 				
 			}
 		});

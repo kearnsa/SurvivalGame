@@ -12,7 +12,7 @@ import javax.swing.JFrame;
 public class UnitMenu {
 
 	public UnitMenu() {
-		JFrame f = new JFrame("Controls");
+		JFrame f = new JFrame("Unit Roster");
 		f.setSize(200, 150);
 		f.setLocation(800, 400);
 		Container content = f.getContentPane();
