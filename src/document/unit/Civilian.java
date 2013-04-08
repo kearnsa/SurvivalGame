@@ -15,6 +15,8 @@ public class Civilian extends Unit {
 	
 	public Civilian(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		resourceCost = 0;
 		powerCost = 0;

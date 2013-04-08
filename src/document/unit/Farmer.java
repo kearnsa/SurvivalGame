@@ -13,6 +13,8 @@ public class Farmer extends Unit {
 	
 	public Farmer(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		resourceCost = 200;
 		powerCost = 0;

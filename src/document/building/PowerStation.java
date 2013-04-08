@@ -26,6 +26,8 @@ public class PowerStation extends Building{
 	 */
 	public PowerStation(Point origin, Map map)
 	{
+		super();
+		
 		this.team = null;
 		type = "Pwr Stn";
 

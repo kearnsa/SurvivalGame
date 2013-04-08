@@ -21,6 +21,8 @@ public class Outpost extends Building {
 	
 	public Outpost(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		this.map = map;
 		resourceCost = 300;

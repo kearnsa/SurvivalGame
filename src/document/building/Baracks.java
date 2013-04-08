@@ -19,6 +19,8 @@ public class Baracks extends Building {
 	
 	public Baracks(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		this.map = map;
 		resourceCost = 300;

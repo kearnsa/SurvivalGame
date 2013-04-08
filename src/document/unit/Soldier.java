@@ -13,6 +13,8 @@ public class Soldier extends Unit{
 
 	public Soldier(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		resourceCost = 350;
 		powerCost = 20;

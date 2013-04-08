@@ -17,6 +17,12 @@ public class Building implements Selectable{
 	protected Point spawnLocation;
 	protected Rectangle area;
 	protected String type;
+	protected boolean selected;
+	
+	public Building()
+	{
+		selected = false;
+	}
 	
 	/**
 	 * Places a Unit at the spawn point of this building. If the spawn point
@@ -28,6 +34,22 @@ public class Building implements Selectable{
 	{
 		map.updateMapArea(spawnLocation, unit);
 	}
+	
+	/**
+	 * Determines if this Building is currently Selected
+	 * 
+	 * @return boolean
+	 */
+	public boolean isSelected()
+		{return selected;}
+	
+	/**
+	 * Setter Method
+	 * 
+	 * @param boolean b
+	 */
+	public void setSelected(boolean b)
+		{selected = b;}
 	
 	/**
 	 * Setter Method
@@ -72,6 +94,8 @@ public class Building implements Selectable{
 	
 	public Rectangle getArea()
 		{return area;}
+
+
 	
 	
 }

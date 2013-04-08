@@ -13,6 +13,8 @@ public class Hunter extends Unit {
 	
 	public Hunter(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		resourceCost = 100;
 		powerCost = 0;

@@ -13,6 +13,8 @@ public class Survivalist extends Unit {
 	
 	public Survivalist(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		resourceCost = 20;
 		powerCost = 0;

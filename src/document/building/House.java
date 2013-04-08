@@ -18,6 +18,8 @@ public class House extends Building{
 	
 	public House(Team team, Point origin, Map map)
 	{
+		super();
+		
 		this.team = team;
 		this.map = map;
 		resourceCost = 100;

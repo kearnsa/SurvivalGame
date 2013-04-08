@@ -14,4 +14,8 @@ public interface Selectable {
 	
 	public String getType();
 	
+	public boolean isSelected();
+	
+	public void setSelected(boolean b);
+	
 }

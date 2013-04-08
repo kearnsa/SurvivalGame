@@ -16,16 +16,12 @@ public class Unit implements Selectable{
 	protected int speed;
 	protected Point location;
 	protected String type;
+	protected boolean selected;
 	
-	
-	/**
-	 * Setter Method
-	 * 
-	 * @param int newHP
-	 */
-	public void setHP(int hp)
-		{this.hp = hp;}
-	
+	public Unit()
+	{
+		selected = false;
+	}
 
 	
 	/**
@@ -37,6 +33,14 @@ public class Unit implements Selectable{
 	}
 	
 	/**
+	 * Determines if this Unit is currently Selected
+	 * 
+	 * @return boolean
+	 */
+	public boolean isSelected()
+		{return selected;}
+
+	/**
 	 * Determines if this Building contains the given Point location
 	 * 
 	 * @param Point point
@@ -44,6 +48,25 @@ public class Unit implements Selectable{
 	 */
 	public boolean isLocation(Point p)
 		{return location.equals(p);}
+	
+	// -------------------------------- Setter Methods -------------------------------------------
+	
+	/**
+	 * Setter Method
+	 * 
+	 * @param int newHP
+	 */
+	public void setHP(int hp)
+		{this.hp = hp;}
+	
+	/**
+	 * Setter Method
+	 * 
+	 * @param boolean b
+	 */
+	public void setSelected(boolean b)
+		{selected = b;}
+
 	
 	
 	// -------------------------------- Getter Methods -------------------------------------------
