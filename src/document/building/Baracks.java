@@ -51,17 +51,9 @@ public class Baracks extends Building {
 	 */
 	public Soldier makeSoldier()
 	{
-		//Spawn Location is empty and valid
-		if (map.isValidAndUnoccupied(spawnLocation))
-			{return new Soldier(team, spawnLocation, map);}
-		
-		//Spawn Location is occupied or invalid
+		if(findAvailableSpawnPoint(area) != null)
+			{return new Soldier(team, findAvailableSpawnPoint(area), map);}
 		else
-		{
-			if(map.findAvailableSpawnPoint(area) != null)
-				{return new Soldier(team, map.findAvailableSpawnPoint(area), map);}
-			else
-				{throw new RuntimeException("There is no available location to spawn a Unit.");}
+			{throw new RuntimeException("There is no available location to spawn a Unit.");}
 		}
 	}
-}

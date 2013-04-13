@@ -36,6 +36,61 @@ public class Building implements Selectable{
 	}
 	
 	/**
+	 * Finds location to spawn a Unit adjacent to given area.
+	 * 
+	 * @param Rectangle r
+	 * @return Point
+	 */
+	public Point findAvailableSpawnPoint(Rectangle r)
+	{
+		int leftX = r.x;
+		int rightX = r.x + r.width - 1;
+		int topY = r.y;
+		int bottomY = r.y + r.height - 1;
+		
+		int tempx;
+		int tempy;
+		
+		//Checks bottom row
+		for (tempx = leftX - 1; tempx < rightX + 1; tempx++)
+		{
+			Point p = map.coordsToPoint(tempx, bottomY + 1);
+			
+			if(map.isValidAndUnoccupied(p))
+				{return p;}
+		}
+				
+		//Checks top row
+		for (tempx = leftX - 1; tempx < rightX + 1; tempx++)
+		{
+			Point p = map.coordsToPoint(tempx, topY - 1);
+			
+			if(map.isValidAndUnoccupied(p))
+				{return p;}
+		}
+		
+		//Checks columns
+		for (tempy = topY - 1; tempy < bottomY + 1; tempy++)
+		{
+			Point p = map.coordsToPoint(leftX - 1, tempy);
+			
+			if(map.isValidAndUnoccupied(p))
+				{return p;}
+			
+			p = map.coordsToPoint(rightX + 1, tempy);
+			
+			if(map.isValidAndUnoccupied(p))
+				{return p;}
+		}
+		
+
+		
+		//There are no available spawn points.
+		return null;
+	}
+
+	
+	/**
 	 * Determines if this Building is currently Selected
 	 * 
 	 * @return boolean

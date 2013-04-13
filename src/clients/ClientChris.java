@@ -1,41 +1,39 @@
 package clients;
 
-import java.awt.Color;
-import java.awt.Point;
-import java.util.Vector;
 
-import javax.swing.JFrame;
+import java.net.Socket;
+import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
 
 import manager.GameManager;
-import view.rtsGraph;
-import document.Map;
-import document.Team;
-import document.World;
-import document.building.Baracks;
-import document.building.Farm;
-import document.building.House;
-import document.building.Outpost;
-import document.building.PowerStation;
+import server.Receiver;
+import server.Transmitter;
+
 
 public class ClientChris {
 
-	public ClientChris(){}
+	public ClientChris()
+	{
+		GameManager gm = new GameManager();
+	}
 	
 /*
  * Unit Production:
  * 
  * Make Map a Singleton
- * Unit Menu: on button click, if selected is correct building, produce unit and close window.
+ * Unit Menu: on button click, execute Command makeUnit(String "name of unit", Selectable placeToTryCreatingUnit).
  */
 	
-/*
- * Game Lobby:
- * 
- * 	
- */
+	
+	
+    
+    //           -------------------------------------- Main Method ----------------------------------------------------
 	
 	public static void main(String[] args)
 	{		
-		GameManager gm = new GameManager();
+		new ClientChris();
 	}
+
+
 }

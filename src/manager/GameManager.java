@@ -2,9 +2,14 @@ package manager;
 
 import java.awt.Color;
 import java.awt.Point;
+import java.net.Socket;
 import java.util.Vector;
+import java.util.logging.Logger;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import clients.Client;
 
 import document.Map;
 import document.Team;
@@ -14,14 +19,29 @@ import document.building.Farm;
 import document.building.House;
 import document.building.Outpost;
 import document.building.PowerStation;
+import server.Receiver;
+import server.Transmitter;
 import view.Controls;
 import view.GameLobby;
 import view.rtsGraph;
 
-public class GameManager {
-
+public class GameManager implements Runnable {
+    
+	public static String serverIP = "127.0.0.1";
+    public static String serverPort = "4000";
+    
+    protected Socket serverSocket;
+    
+    protected Transmitter transmitter;
+    protected Receiver receiver;
+    
+    boolean running;
+	
+    
+    
 	public GameManager() 
 	{
+		setUpGameConnection();
 		createLobby();
 		createControls();
 		makeTestGame();
@@ -104,5 +124,55 @@ public class GameManager {
         System.out.println(world.getMap().displayTest());
         
 	}
+
+	private void setUpGameConnection()
+	{
+		Integer serverPortInt = Integer.parseInt(serverPort);
+	       
+        try
+        {
+            serverSocket = new Socket(serverIP, serverPortInt);
+        }
+        
+        catch (Exception e)
+        {
+            JOptionPane.showMessageDialog(null, "Failed to connect to server at "
+                    + serverIP + " : " + serverPort);
+            
+            System.exit(0);
+        }
+        
+        try
+        {
+            transmitter = new Transmitter(serverSocket.getOutputStream());
+            receiver = new Receiver(serverSocket.getInputStream());
+        }
+        
+        catch (Exception e)
+        {
+            Logger.getLogger(Client.class.toString() + " Couldn't establish Transmitter" +
+                    "or Receiver in Client constructor: " + e.getMessage());
+            
+            System.exit(0);
+        }
+        
+        running = true;
+        
+        new Thread(this).start();
+	}
+	
+    @Override
+    public void run ()
+    {
+        while (running)
+        {
+            if (receiver.hasMessages())
+            {
+                String message = receiver.getNextMessage();
+                
+                System.out.println("From server: " + message);
+            }
+        }
+    }
 	
 }

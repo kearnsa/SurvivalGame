@@ -72,8 +72,8 @@ public class Farm extends Building{
 		//Spawn Location is occupied or invalid
 		else
 		{
-			if(map.findAvailableSpawnPoint(area) != null)
-				{return new Farmer(team, map.findAvailableSpawnPoint(area), map);}
+			if(findAvailableSpawnPoint(area) != null)
+				{return new Farmer(team, findAvailableSpawnPoint(area), map);}
 			else
 				{throw new RuntimeException("There is no available location to spawn a Unit.");}
 		}

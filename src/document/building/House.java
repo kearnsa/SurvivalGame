@@ -56,8 +56,8 @@ public class House extends Building{
 		//Spawn Location is occupied or invalid
 		else
 		{
-			if(map.findAvailableSpawnPoint(area) != null)
-				{return new Civilian(team, map.findAvailableSpawnPoint(area), map);}
+			if(findAvailableSpawnPoint(area) != null)
+				{return new Civilian(team, findAvailableSpawnPoint(area), map);}
 			else
 				{throw new RuntimeException("There is no available location to spawn a Unit.");}
 		}
