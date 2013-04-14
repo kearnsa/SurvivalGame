@@ -1,6 +1,6 @@
 package clients;
 
-import manager.GameManager;
+import game.GameManager;
 
 public class Client {
 

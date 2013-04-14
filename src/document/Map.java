@@ -25,8 +25,8 @@ public class Map {
 	 * @param int y: y-dimension of map
 	 * @param Vector<PowerStation> powerStations: A collection of the powerStations for the map
 	 */
-	public Map(int x, int y, Vector<PowerStation> powerStations) {
-		map = new Selectable[x][y];
+	public Map(int width, int height, Vector<PowerStation> powerStations) {
+		map = new Selectable[width][height];
 		this.powerStations = powerStations;
 	}
 

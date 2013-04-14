@@ -17,9 +17,9 @@ public class World {
 		this.map = new Map();
 	}
 
-	public World(Map map)
+	public World(Map map, Vector<Team> teams)
 	{
-		teams = new Vector<Team>();
+		this.teams = teams;
 		this.map = map;
 	}
 	

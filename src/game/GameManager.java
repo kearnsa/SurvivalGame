@@ -1,4 +1,4 @@
-package manager;
+package game;
 
 import java.awt.Color;
 import java.awt.Point;
@@ -47,6 +47,23 @@ public class GameManager implements Runnable {
 		makeTestGame();
 	}
 
+	public void startGame(Map map, Vector<Team> teams)
+	{
+		World world = new World(map, teams);
+		
+		rtsGraph graph = new rtsGraph(world);
+		
+        JFrame f = new JFrame("2D RTS View");
+        f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f.getContentPane().add(graph);
+        f.setSize(1000,1000);
+        f.setLocation(500, 0);
+        f.setVisible(true);
+        
+        
+	}
+	
+	
 	//     ---------------------------   Helper Methods   --------------------------------------
 	
 	private void createLobby()
@@ -59,9 +76,9 @@ public class GameManager implements Runnable {
 		Controls controls = new Controls();
 	}
 	
-	public void makeTestGame()
+	private void makeTestGame()
 	{
-		World world = new World(new Map(20, 20, new Vector<PowerStation>()));
+		World world = new World(new Map(20, 20, new Vector<PowerStation>()), new Vector<Team>());
 		Team team = new Team("Chris", Color.red);
 		Team team2 = new Team("Aisling", Color.blue);
 		world.addTeam(team);

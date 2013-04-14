@@ -1,12 +1,13 @@
 package clients;
 
 
+import game.GameManager;
+
 import java.net.Socket;
 import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
-import manager.GameManager;
 import server.Receiver;
 import server.Transmitter;
 
