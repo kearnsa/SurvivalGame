@@ -5,7 +5,8 @@ A networked Real Time Strategy and First Person Shooter game
 
 
 
-System Requirements
-===================
+Requirements
+============
 
-You must be running Java SE 1.7 in order for this game to function properly.
+Java 1.6 or higher
+Internet Connection

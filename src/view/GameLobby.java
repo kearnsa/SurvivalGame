@@ -9,11 +9,13 @@ import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JScrollPane;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 public class GameLobby {
 
-	private final int height = 1000;
+	private final int height = 500;
 	private final int width = 1000;
 	private final int PAD = 30;
 	
@@ -46,11 +48,13 @@ public class GameLobby {
 		});
 		
 		JTextField messageField = new JTextField(20);
-		
+		JTextArea textArea = new JTextArea();
+		JScrollPane scrollTextArea = new JScrollPane(textArea);
 		
 		content.add(startButton);
 		content.add(sendButton);
 		content.add(messageField);
+		content.add(scrollTextArea);
 		
 		Dimension size = startButton.getPreferredSize();
 		startButton.setBounds(PAD, PAD, size.width, size.height);
@@ -62,6 +66,8 @@ public class GameLobby {
 		size = messageField.getPreferredSize();
 		messageField.setBounds(width - sendButton.getPreferredSize().width - size.width - PAD, height - size.height - PAD - 20, size.width, size.height);
 		
+		size = scrollTextArea.getPreferredSize();
+		scrollTextArea.setBounds(PAD, (PAD * 2) + startButton.getPreferredSize().height, 500, height - 300);
 		
 		f.setVisible(true);
 	}

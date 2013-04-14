@@ -1,9 +1,19 @@
 package command;
 
-public class killUnit {
+public class KillUnit implements Command{
 
-	public killUnit() {
+	public KillUnit() {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public String toString()
+	{
+		return null;
+	}
+	
 }

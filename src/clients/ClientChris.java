@@ -23,7 +23,13 @@ public class ClientChris {
  * Unit Production:
  * 
  * Make Map a Singleton
- * Unit Menu: on button click, execute Command makeUnit(String "name of unit", Selectable placeToTryCreatingUnit).
+ * Unit Menu: on button click, execute Command 
+ * 		makeUnit(String "name of unit", Selectable placeToTryCreatingUnit).
+ * ----------------------------------
+ * Make GameLobby a singleton.
+ * Make World a singleton.
+ * Make Lead Player a singleton
+ * 
  */
 	
 	

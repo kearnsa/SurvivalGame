@@ -56,7 +56,7 @@ public class GameManager implements Runnable {
         JFrame f = new JFrame("2D RTS View");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(graph);
-        f.setSize(1000,1000);
+        f.setSize(800,800);
         f.setLocation(500, 0);
         f.setVisible(true);
         
@@ -89,7 +89,7 @@ public class GameManager implements Runnable {
         JFrame f = new JFrame("2D RTS View");
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.getContentPane().add(graph);
-        f.setSize(1000,1000);
+        f.setSize(800,800);
         f.setLocation(500, 0);
         f.setVisible(true);
         

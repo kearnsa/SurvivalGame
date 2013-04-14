@@ -1,9 +1,19 @@
 package command;
 
-public class makeBuilding {
+public class MakeBuilding implements Command{
 
-	public makeBuilding() {
+	public MakeBuilding() {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public String toString()
+	{
+		return null;
+	}
+	
 }

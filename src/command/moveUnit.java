@@ -1,9 +1,19 @@
 package command;
 
-public class moveUnit {
+public class MoveUnit implements Command {
 
-	public moveUnit() {
+	public MoveUnit() {
 		// TODO Auto-generated constructor stub
 	}
 
+	public void execute() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public String toString()
+	{
+		return null;
+	}
+	
 }
