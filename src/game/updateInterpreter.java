@@ -3,7 +3,7 @@ package game;
 /*
  * Valid formats for a game update:
  * 
- * <Command Object Type>: [
+ * Command:<Command Object Type> <ParamCategory>:<Param> ... <ParamCategory>:<Param>
  */
 public class updateInterpreter {
 
